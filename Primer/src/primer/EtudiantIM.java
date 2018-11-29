@@ -12,6 +12,11 @@ public class EtudiantIM extends EtudiantErTim implements Stagiaire { //définit 
 	}
 	
 	@Override
+	public void print() {
+		System.out.println("Je suis en IM !");
+	}
+	
+	@Override
 	public int nombreHeuresDeCours() {		
 		return 120/pythonskill;		
 	}
@@ -34,6 +39,10 @@ public class EtudiantIM extends EtudiantErTim implements Stagiaire { //définit 
 	@Override
 	public boolean remunere() {
 		return stage.isEstpaye();
+	}
+	
+	public int getPythonskill() {
+		return pythonskill;
 	}
 	
 }

@@ -18,10 +18,10 @@ public class EtudiantTrad extends EtudiantErTim {
 		langspec = lg;
 	}
 	
-//	@Override
-//	public void print() {
-//		System.out.println("Je suis un.e étudiant.e Trad, mon nom est "+ name + ", mon numéro étudiant est " + number + " ; ma langue de spécialité est " + langspec);
-//	}
+	@Override
+	public void print() {
+		System.out.println("Je suis en Trad !");
+	}
 	
 	@Override
 	public int nombreHeuresDeCours() {
