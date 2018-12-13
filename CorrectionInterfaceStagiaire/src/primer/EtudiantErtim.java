@@ -5,7 +5,7 @@ package primer;
  * @author milena
  * 
  */
-public class EtudiantErtim {
+public class EtudiantErTim {
 
 	protected int number;
 	protected String name;
@@ -23,15 +23,15 @@ public class EtudiantErtim {
 	 * @param n nom de l'étudiant
 	 * @param num numéro étudiant
 	 */
-	public EtudiantErtim( String n, int num) {
+	public EtudiantErTim( String n, int num) {
 		number = num;
 		name=n;
 	}
 
 	@Override
 	public boolean equals(Object o) {
-		System.out.println("Test equals dans EtudiantErtim");
-		EtudiantErtim e = (EtudiantErtim)o; //transtypage en un type + spécialisé
+		System.out.println("Test equals dans EtudiantErTim");
+		EtudiantErTim e = (EtudiantErTim)o; //transtypage en un type + spécialisé
 		String stim = e.getName();
 		if (name.equals(stim)) { // la méthode equals du type String
 			if (number == e.getNumber()) {

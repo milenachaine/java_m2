@@ -1,6 +1,6 @@
 package primer;
 
-public class EtudiantTrad extends EtudiantErtim {
+public class EtudiantTrad extends EtudiantErTim {
 
 	String langspec;
 	

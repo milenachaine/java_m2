@@ -5,8 +5,6 @@ public class CommentTrouverUnStage {
 	public static void main(String[] args) {
 		
 		EtudiantTrad e = new EtudiantTrad("Judd",123,"latin");
-
-		EtudiantIM ebis = new EtudiantIM("Barack",456,1);
 	
 		EtudiantTrad eter = new EtudiantTrad("Judd",123,"grec");
 		// test méthode equals

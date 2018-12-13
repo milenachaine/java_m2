@@ -4,14 +4,14 @@ package primer;
  * @author milena
  *
  */
-public class EtudiantIM extends EtudiantErtim implements Stagiaire {
+public class EtudiantIM extends EtudiantErTim implements Stagiaire {
 
 	private int pythonskill;// le niveau python de l'�tudiant
 	private Stage stage;   //  les caract�ristiques de son stage						// de l'�tudiant
 	
 	public EtudiantIM( String n, int num,int ps) {
 		super(n, num);
-		pythonskill = ps;
+		setPythonskill(ps);
 		stage = null;
 	}
 
@@ -33,6 +33,14 @@ public class EtudiantIM extends EtudiantErtim implements Stagiaire {
 	@Override
 	public boolean remunere() {
 		return stage.isRemunere();
+	}
+
+	public int getPythonskill() {
+		return pythonskill;
+	}
+
+	public void setPythonskill(int pythonskill) {
+		this.pythonskill = pythonskill;
 	}
 	
 }
