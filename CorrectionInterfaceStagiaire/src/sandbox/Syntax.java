@@ -19,8 +19,7 @@ public class Syntax {
         int nombreDe = test2.length()-test2.replaceAll("(e|é)", "").length();
         System.out.println("Nombre de e : " + nombreDe);
         
-        //transformer une String en int (vice-versa)
-        
+        //transformer une String en int (vice-versa)        
         int nombre = 123;
         //String chaine = Integer.toString(nombre);
         String chaine = String.valueOf(nombre);
@@ -105,13 +104,14 @@ public class Syntax {
 				"suivantes : 3/1 , 22/7, 333/106, 355/113, 103993/33102. Al-Khawarizmi, au IXe siècle, est " + 
 				"persuadé que PI est irrationnel. Moïse Maïmonide fait également état de cette idée durant le XIIe " + 
 				"siècle";
-		Pattern findpi = Pattern.compile(".+(\\d\\.\\d+).+");
+		//0)
+		Pattern findpi = Pattern.compile("\\d\\.\\d+");
 		Matcher fp = findpi.matcher(pi);
-		if (fp.matches()) {
-			System.out.println("Pi : " + fp.group(1));
+		while (fp.find()) {
+			int from = fp.start();
+			int to = fp.end();
+			System.out.println("Pi : " + pi.substring(from,to));
 		}
-
-		
 	}
 
 }
