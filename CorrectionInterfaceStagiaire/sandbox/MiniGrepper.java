@@ -11,8 +11,9 @@ public class MiniGrepper {
 	//MiniGrepper est une classe qui permet de savoir si un fichier contient une String donnée
 	//un objet MiniGrepper est instancié avec un chemin vers un fichier
 	//+ méthode grep qui attend un String et renvoie un boolean en fonction de la présence/absence de la String dans le fichier
+	//testée dans IO.java
 	
-	protected String chemin;
+	protected String chemin; //pour l'instant ce champ n'est pas vraiment nécessaire
 	protected List<String> lignes;
 	
 	public MiniGrepper(String c) throws IOException {

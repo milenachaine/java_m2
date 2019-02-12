@@ -28,12 +28,12 @@ public class Listes {
 		for (int cpt_index = 0; cpt_index < l.size(); cpt_index++) {
 			System.out.println("Elément " + cpt_index + " : " + l.get(cpt_index));
 		}
-
+		System.out.println(transition);
 		//foreach (ctrl+space)
 		for (String nom : l) {
 			System.out.println("Elément " + l.indexOf(nom) + " : " + nom);
 		}
-
+		System.out.println(transition);
 		//variation sur thème
 		int cpt = 0;
 		for (String nom : l) {
