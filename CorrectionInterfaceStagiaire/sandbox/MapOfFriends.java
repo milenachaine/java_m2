@@ -81,20 +81,20 @@ public class MapOfFriends {
 		System.out.println(transition + "TreeMap" + transition);
 		
 		//ter avec TreeMap
-		TreeMap<String, Integer> m21 = new TreeMap<String, Integer>();
-		m21.put("Zoe", 26);
-		m21.put("Claire", 24);
-		m21.put("Faïna", 22);
-		m21.put("Jeanne", 29);
-		m21.put("Anne", 28);
+		TreeMap<String, Integer> m3 = new TreeMap<String, Integer>();
+		m3.put("Zoe", 26);
+		m3.put("Claire", 24);
+		m3.put("Faïna", 22);
+		m3.put("Jeanne", 29);
+		m3.put("Anne", 28);
 		
 		//appliquer la méthode toString sur la Map
-		System.out.println(m21.toString());
+		System.out.println(m3.toString());
 		
 		//parcourir via les clés dans un Set (RENVOI DANS ORDRE ALPHAB)
-		Set<String> prenoms21 = m21.keySet();
-		for (String prenom : prenoms21) {
-			System.out.println("Prénom : " + prenom + " / Âge : " + m21.get(prenom));
+		Set<String> prenoms3 = m3.keySet();
+		for (String prenom : prenoms3) {
+			System.out.println("Prénom : " + prenom + " / Âge : " + m3.get(prenom));
 		}
 		
 		System.out.println(transition);
@@ -104,16 +104,25 @@ public class MapOfFriends {
 		String mot = "linguistique";
 		LinkedHashMap<String, Integer> ordre_mot = new LinkedHashMap<String, Integer>();
 		
-		//utiliser charAt plutôt!
-		for (String lettre : mot.split("")) {
-			if (ordre_mot.containsKey(lettre)) {
-
-			}
+		//pour afficher les lettres dans l'ordre du mot
+		//on peut aussi utiliser charAt
+		for (int i = 0; i < mot.length(); i++) {
 			
+			String lettre = mot.substring(i, i+1);
+			
+			if (ordre_mot.containsKey(lettre)) {
+				int incr = ordre_mot.get(lettre) + 1;
+				ordre_mot.put(lettre, incr);
+			}
 			else {
-				
+				ordre_mot.put(lettre, 1);
 			}
 		}
+		System.out.println(ordre_mot);
+		
+		//pour afficher les lettres dans l'ordre alphabétique
+		TreeMap<String, Integer> ordre_alpha = new TreeMap<>(ordre_mot);
+		System.out.println(ordre_alpha);
 	}
 
 }

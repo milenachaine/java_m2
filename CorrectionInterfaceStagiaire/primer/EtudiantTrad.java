@@ -9,4 +9,8 @@ public class EtudiantTrad extends EtudiantErTim {
 		langspec=lng;
 	}
 
+	public String getLangspec() {
+		return langspec;
+	}
+
 }
