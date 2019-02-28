@@ -20,28 +20,28 @@ public class IO {
 		String tosave2 = "world!";
 		String tosave = tosave1 + "\n" + tosave2;
 
-		String datas = "/Users/milena/Documents/Travail/M2TAL/testjava.txt";
-		Path p = Paths.get(datas);
+		String chemin = "/Users/milena/Documents/Travail/M2TAL/testjava.txt";
+		Path p = Paths.get(chemin);
 		if (Files.exists(p)) {
 			Files.delete(p);
 		}
-		Files.write(Paths.get(datas), tosave.getBytes("UTF-8"), StandardOpenOption.CREATE);
+		Files.write(Paths.get(chemin), tosave.getBytes("UTF-8"), StandardOpenOption.CREATE);
 
-		List<String> lines = Files.readAllLines(Paths.get(datas), StandardCharsets.UTF_8);
+		List<String> lines = Files.readAllLines(Paths.get(chemin), StandardCharsets.UTF_8);
 		String fichier = lines.toString();
 		System.out.println(fichier);
-		//		for (String l : lines) {
-		//			System.out.println("lines --> "+l);
-		//		}
+		for (String l : lines) {
+			System.out.println("lines --> "+l);
+		}
 
 		//exo père Duchesne
-		//		String duchene = "/Users/milena/Documents/Travail/M2TAL/java/pereduchene.tagged";
-		//		List<String> lignes = Files.readAllLines(Paths.get(duchene), StandardCharsets.UTF_8);
-		//		
-		//		for (String l : lignes) {
-		//			String[] tab = l.split("\t");
-		//			System.out.println("champ1= " + tab[0] + "\tchamp2= " + tab[1] + "\tchamp3= " + tab[2]);
-		//		}
+		String duchene = "/Users/milena/Documents/Travail/M2TAL/java/pereduchene.tagged";
+		List<String> lignes = Files.readAllLines(Paths.get(duchene), StandardCharsets.UTF_8);
+
+		for (String l : lignes) {
+			String[] tab = l.split("\t");
+			System.out.println("champ1= " + tab[0] + "\tchamp2= " + tab[1] + "\tchamp3= " + tab[2]);
+		}
 
 		//test MiniGrepper
 		MiniGrepper fg = new MiniGrepper("/Users/milena/Documents/Travail/M2TAL/java/pereduchene.tagged");
@@ -76,14 +76,14 @@ public class IO {
 			}
 			//code pour supprimer tous les fichiers qui ne contiennent pas 'chocolat'
 			//à laisser en commentaire
-//			else {
-//					Files.delete(absolu);
-//			}
+			//			else {
+			//					Files.delete(absolu);
+			//			}
 			cpt = cpt+1;
 		}
 		stream.close();
 		System.out.println(cpt + " fichiers"); //1770 fichiers
-		System.out.println(cpt_choc + " fichiers contenant le terme \'chocolat\'"); //84?
+		System.out.println(cpt_choc + " fichiers contenant le terme \'chocolat\'"); //84
 
 	}
 

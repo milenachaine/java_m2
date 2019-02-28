@@ -30,6 +30,7 @@ public class Syntax {
 
 	public static void main(String[] args) {
 		System.out.println("Tests!");
+		String transition = "---------------------";
 		
 		String test1 = "Longtemps je me suis levé de bonne heure";
 		String test2 = test1.replaceFirst("levé", "couché");
@@ -44,8 +45,38 @@ public class Syntax {
         String chaine = String.valueOf(nombre);
         System.out.println(chaine.getClass());
         
-        //exercice de split
+		System.out.println(transition);
+
+        //comparaison equals, compareTo, compareToIgnoreCase
+        String ch1 = "octopus";
+        String ch2 = "jabberwocky";
+        String ch3 = "octopus";
+        String ch4 = "OcToPuS";
         
+        Integer i1 = 45;
+        Integer i2 = 687;
+        Integer i3 = 45;       
+        
+        System.out.println(ch1.equals(ch2));
+        System.out.println(ch1.equals(ch3));
+        System.out.println(ch1.equals(ch4));
+		System.out.println(transition);
+
+        System.out.println(ch1.compareTo(ch2));
+        System.out.println(ch1.compareTo(ch3));
+        System.out.println(ch1.compareTo(ch4));
+		System.out.println(transition);
+
+        System.out.println(ch1.compareToIgnoreCase(ch2));
+        System.out.println(ch1.compareToIgnoreCase(ch3));
+        System.out.println(ch1.compareToIgnoreCase(ch4));
+		System.out.println(transition);
+
+        System.out.println(i1.compareTo(i2));
+        System.out.println(i1.compareTo(i3));
+		System.out.println(transition);
+
+        //exercice de split     
         String exo = "Dummy, John, 28 ans, 14 Balboa Avenue, 2300$";
         String[] tableau = exo.split(", ");
         String nom = tableau[0];
@@ -57,6 +88,7 @@ public class Syntax {
         Integer salaireEuro = (int)(salaire/2.3);
         
         System.out.println(prenom + " " + nom + " habite au " + adresse + " et gagne déjà " + salaire + "$ par mois à " + age + " soit " + salaireEuro + " euro en 15 jours");    
+		System.out.println(transition);
 
         //extraire les variables de la chaîne suivante : a, b, x, p, q, m, y
         
@@ -66,7 +98,8 @@ public class Syntax {
         for (int i = 0; i < variables.length; i++) {
         	System.out.println(variables[i]);
         }
-        
+		System.out.println(transition);
+
         //coder une méthode (récursive) String reverse(String s) qui renvoie s dans l'ordre inverse e.g. reverse(« abc ») → « cba »
         String palindrome = "kayak";
         String not_palindrome = "abc";
@@ -79,7 +112,18 @@ public class Syntax {
         
         System.out.println(palindrome + " : " + reverse2(palindrome2));
         System.out.println(not_palindrome + " : " + reverse2(not_palindrome2));
-        
+		System.out.println(transition);
+		
+		//StringBuilder
+        String[] proust = "Longtemps je me suis levé de bonne heure".split(" ");
+        StringBuilder proust_but_better = new StringBuilder();
+        for (String mot : proust) {
+			proust_but_better.append(mot).append(" ");
+		}
+        System.out.println(proust_but_better);
+        System.out.println(proust_but_better.toString());
+		System.out.println(transition);
+
         //types paramétrés
 		EtudiantErTim[] promo = new EtudiantErTim[5];
 		promo[0] = new EtudiantTrad ( "Jack" , 12345, "roumain");
@@ -103,9 +147,9 @@ public class Syntax {
 		else {
 			System.out.println(":(");
 		}
+		System.out.println(transition);
 		
-		//regexp, pattern, matcher
-		
+		//regexp, pattern, matcher	
 		Pattern nom_regexp = Pattern.compile("(\\w+ \\w+) (\\(\\d{2}\\))");
 		Matcher f = nom_regexp.matcher("Anne Solr (14)");
 		if (f.matches()) {
@@ -114,7 +158,8 @@ public class Syntax {
 			System.out.println("2 : " + f.group(2));
 
 		}
-		
+		System.out.println(transition);
+
 		Pattern regexp2 = Pattern.compile("(\\w+/\\w+)\\((\\w+ \\w+) & (\\w+ \\w+)\\)");
 		Matcher f2 = regexp2.matcher("Nutch/Solr(Julius Sasoude & Tim Ochoa)");
 		if (f2.matches()) {
@@ -124,7 +169,8 @@ public class Syntax {
 			System.out.println("3 : " + f2.group(3));
 
 		}
-		
+		System.out.println(transition);
+
 		String pi = "Pi dont la valeur avec 6 décimales est 3.141592 peut s'approximer avec la série de fractions " + 
 				"suivantes : 3/1 , 22/7, 333/106, 355/113, 103993/33102. Al-Khawarizmi, au IXe siècle, est " + 
 				"persuadé que PI est irrationnel. Moïse Maïmonide fait également état de cette idée durant le XIIe " + 
@@ -137,7 +183,8 @@ public class Syntax {
 			int to = fp.end();
 			System.out.println("Pi : " + pi.substring(from,to));
 		}
-		
+		System.out.println(transition);
+
 		//1) Effectuez les divisions mentionnées et afficher les résultats correspondants.
 		Pattern divisions = Pattern.compile("(\\d+)/(\\d+)");
 		Matcher div = divisions.matcher(pi);
@@ -146,7 +193,8 @@ public class Syntax {
 			int to = div.end();
 			System.out.println("Division : " + pi.substring(from,to) + " -- Résultat : " + Integer.valueOf(div.group(1))/Integer.valueOf(div.group(2)));
 		}
-		
+		System.out.println(transition);
+
 		//2) Récupérez les noms propres
 		// qu'on définit par au moins deux tokens commençant par une majuscule mais non entièrement en majuscules, séparés par une espace ou un tiret
 		Pattern findnp = Pattern.compile("[A-Z][^A-Z ]+( |-)[A-Z][^A-Z \\p{Punct}]+");
@@ -156,7 +204,8 @@ public class Syntax {
 			int to = fnp.end();
 			System.out.println("Nom : " + pi.substring(from,to));
 		}
-		
+		System.out.println(transition);
+
 		//3) Récupérez les numéros de siècle
 		//càd ces lettres en majuscule : I, V, X (suffisant pour les siècles ici)
 		Pattern findcenturies = Pattern.compile("[XIV]{2,}");
