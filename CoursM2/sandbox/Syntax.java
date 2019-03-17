@@ -115,7 +115,7 @@ public class Syntax {
 		System.out.println(transition);
 		
 		//StringBuilder
-        String[] proust = "Longtemps je me suis levé de bonne heure".split(" ");
+        String[] proust = "Longtemps je me suis couché de bonne heure".split(" ");
         StringBuilder proust_but_better = new StringBuilder();
         for (String mot : proust) {
 			proust_but_better.append(mot).append(" ");

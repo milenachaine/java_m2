@@ -1,4 +1,4 @@
-package sandbox;
+package maths;
 
 public class Calculette {
 
@@ -6,9 +6,13 @@ public class Calculette {
 		Calculette x = new Calculette(0);
 		String res = x.plus(10).fois(2).moins(1).toString();
 		System.out.println(res);
+		
 		// ou encore
 		Calculette y = new Calculette(0);
 		System.out.println(y.plus(10).fois(2).moins(1));
+		
+		Calculette z = new Calculette(8);
+		System.out.println(z.div(4));
 	}
 	
 /*	1) Écrire une classe Calculette, ayant un constructeur Calculette().
@@ -25,36 +29,32 @@ public class Calculette {
 		resultat = 0;
 	}
 	
-	public Integer getResultat() {
-		return resultat;
-	}
-
 	public Calculette(Integer r) {
 		resultat = r;
 	}
 	
+	public Integer getResultat() {
+		return resultat;
+	}
+	
 	public Calculette plus(Integer i) {
 		resultat = resultat + i;
-		Calculette calc = new Calculette(resultat);
-		return calc;
+		return new Calculette(this.resultat);
 		}
 	
 	public Calculette moins(Integer i) {
 		resultat = resultat - i;
-		Calculette calc = new Calculette(resultat);
-		return calc;
+		return new Calculette(this.resultat);
 		}
 	
 	public Calculette fois(Integer i) {
 		resultat = resultat * i;
-		Calculette calc = new Calculette(resultat);
-		return calc;
+		return new Calculette(this.resultat);
 		}
 	
 	public Calculette div(Integer i) {
 		resultat = resultat / i;
-		Calculette calc = new Calculette(resultat);
-		return calc;
+		return new Calculette(this.resultat);
 		}
 	
 	@Override

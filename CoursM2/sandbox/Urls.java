@@ -3,7 +3,7 @@ package sandbox;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Exemple {
+public class Urls {
 
 	//	public static void main(String[] args) throws MalformedURLException {
 	//		URL myURL = new URL("http://www.inalco.fr/");
