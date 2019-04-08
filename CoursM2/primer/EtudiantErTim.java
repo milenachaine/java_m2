@@ -2,10 +2,11 @@ package primer;
 /**
  * mettre ici la doc de la classe
  * cette classe représente la modélisation d'un étudiant du département ER-TIM
+ * dernier update : rendre les objets EtudiantErTim comparables
  * @author milena
  * 
  */
-public class EtudiantErTim {
+public class EtudiantErTim implements Comparable<EtudiantErTim> {
 
 	protected int number;
 	protected String name;
@@ -43,5 +44,37 @@ public class EtudiantErTim {
 			return false;			
 		}
 	}
+
+	@Override
+	public int compareTo(EtudiantErTim etudiant) {
+		// ici on compare par numéro d'étudiant
+		System.out.println("Test compareTo dans EtudiantErTim");
+		int etd_num = etudiant.getNumber();
+		
+		if (this.number < etd_num) {
+			return -1;
+		}
+		else if (this.number > etd_num) {
+			return 1;
+		}
+		else {
+			return 0;
+		}
+	}
+	
+	//si on voulait comparer par nom
+/*    @Override
+    public int compareTo(EtudiantErTim arg0) {
+            int trialpha = name.compareTo(arg0.getName());
+            if(trialpha > 0) {
+                    return 1;
+            }
+            else if (trialpha < 0) {
+                    return -1;
+            }
+            else {
+                    return 0;
+            }
+    }*/
 
 }

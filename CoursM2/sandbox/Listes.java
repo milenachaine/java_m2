@@ -1,6 +1,8 @@
 package sandbox;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
 import primer.EtudiantErTim; //importer primer
 import primer.EtudiantIM;
 import primer.EtudiantTrad;
@@ -126,10 +128,19 @@ public class Listes {
 		}
 
 		System.out.println(transition);
-
+		
+		//utiliser méthode CompareTo d'EtudiantErTim sur promo
+		Collections.sort(promo);
+		
+		for (EtudiantErTim etd : promo) {
+			System.out.println(etd.getNumber());
+		}
+		
+		System.out.println(transition);
+		
 		//correction
 
-		ArrayList<String> ll = new ArrayList<String>();
+/*		ArrayList<String> ll = new ArrayList<String>();
 		ll.add("a");ll.add("b");ll.add("c");ll.add("d");ll.add("e");ll.add("f");
 
 		System.out.println( " list size = " + ll.size());
@@ -171,7 +182,7 @@ public class Listes {
 		for (int i = 0; i < ll.size()-p ; i++) {
 			System.out.println(i + " >  " + ll.subList(i, i+p+1));
 		}
-		System.out.println(transition);
+		System.out.println(transition);*/
 		
 		ArrayList<String> maliste = new ArrayList<String>();
 		maliste.add("a"); maliste.add("b"); maliste.add("c"); maliste.add("d"); maliste.add("e");
